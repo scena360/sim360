@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+
+# misc
+.DS_STORE
+*.DS_STORE*
+*.env
+*.log
+logs.json
+
+#typescript
+
+build/
+tsconfig.tsbuildinfo
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Yarn Integrity file
+.yarn-integrity
+
+# other
+.idea/

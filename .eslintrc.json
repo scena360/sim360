@@ -1,0 +1,51 @@
+{
+  "extends": ["airbnb-base", "plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint/eslint-plugin"],
+  "rules": {
+    "class-methods-use-this": "off",
+    "import/no-unresolved": "off",
+    "no-underscore-dangle": "off",
+    "object-curly-newline": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "ter-arrow-parens": "off",
+    "func-names": "off",
+    "camelcase": "off",
+    "arrow-parens": "off",
+    "lines-between-class-members": "off",
+    "no-param-reassign": "off",
+    "arrow-body-style": "off",
+    "prefer-destructuring": "off",
+    "no-useless-catch": "off",
+    "prefer-template": "off",
+    "max-classes-per-file": "off",
+    "function-paren-newline": "off",
+    "operator-linebreak": "off",
+    "no-useless-concat": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/member-delimiter-style": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "no-shadow": "off", // replaced by ts-eslint rule below
+    "@typescript-eslint/no-shadow": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "@typescript-eslint/camelcase": "off",
+        "@typescript-eslint/explicit-function-return-type": "off"
+      }
+    }
+  ]
+}

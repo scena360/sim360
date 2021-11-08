@@ -1,0 +1,25 @@
+{
+  "name": "sim360",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:scena360/sim360.git",
+  "author": "Scena 360 <info@scena360.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {},
+  "scripts": {
+    "build": "tsc",
+    "build:clean": "yarn run clean && tsc",
+    "build:watch": "tsc -w",
+    "start": "node build/index.js",
+    "build:run": "yarn run build && yarn start"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "playwright": "^1.16.3",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4"
+  }
+}

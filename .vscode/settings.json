@@ -1,0 +1,75 @@
+{
+  "window.title": "${activeEditorMedium}${separator}${rootName}",
+  "files.insertFinalNewline": true,
+  "javascript.validate.enable": true,
+  "typescript.validate.enable": true,
+  "files.trimTrailingWhitespace": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "build": true,
+    "**/yarn.lock": true,
+    "**/build": true,
+    "**/test": true
+  },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 5000,
+  "editor.suggestSelection": "first",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.git": true,
+    "**/.project": true,
+    "**/.DS_Store": true,
+    "**/.settings": true,
+    "**/.factorypath": true,
+    "**/node_modules": true
+  },
+  "gitlens.views.repositories.location": "gitlens",
+  "gitlens.views.fileHistory.location": "gitlens",
+  "gitlens.views.lineHistory.location": "gitlens",
+  "gitlens.views.compare.location": "gitlens",
+  "gitlens.views.search.location": "gitlens",
+  "editor.tabSize": 2,
+  "breadcrumbs.enabled": true,
+  "references.preferredLocation": "view",
+  "workbench.editor.showTabs": true,
+  "editor.minimap.enabled": false,
+  // eslint settings reference:
+  // "eslint.alwaysShowStatus": true,
+  // "eslint.format.enable": true,
+  // "eslint.packageManager": "yarn",
+  // "eslint.quiet": true,
+  // "eslint.run": "onSave",
+  // "eslint.options": {
+  //   "configFile": ".eslintrc.js"
+  // },
+  "prettier.configPath": ".prettierrc.json",
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true
+  },
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
