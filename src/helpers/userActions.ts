@@ -19,6 +19,7 @@ export const signInAsAnon = async (p: Page) => {
     delay: 500,
     button: 'left',
     timeout: 4000,
+    force: true,
   });
 };
 
@@ -31,7 +32,7 @@ export const shouldWaitForOnboarding = async (p: Page): Promise<boolean> => {
 };
 
 export const handleOnboardingModal = async (p: Page) => {
-  await sleep(3000);
+  await sleep(5000);
 
   await p.waitForSelector(SELECTORS.ONBOARDING_MODAL_FOOTER_BTN, {
     timeout: 20000,
@@ -41,7 +42,8 @@ export const handleOnboardingModal = async (p: Page) => {
   await p.click(SELECTORS.ONBOARDING_MODAL_FOOTER_BTN, {
     button: 'left',
     clickCount: 1,
-    delay: 500,
+    delay: 4000,
     timeout: 20000,
+    force: true,
   });
 };

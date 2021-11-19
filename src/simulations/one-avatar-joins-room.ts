@@ -9,23 +9,31 @@ import {
   handleOnboardingModal,
   shouldWaitForOnboarding,
   launchPage,
+  sleep,
 } from '../helpers';
 
 declare const N360: any;
 // declare const SCENA_ENV: any;
 
-const clickOnDeviceSettingsConfirmations = (p: Page) => {
+const clickOnDeviceSettingsConfirmations = async (p: Page) => {
+  await sleep(8000);
+
   // click on device settings confirmation
   return p.click(SELECTORS.ONBOARDING_MODAL_FOOTER_BTN, {
     button: 'left',
     clickCount: 1,
-    delay: 8000, // takes time for this button to load (at least 1.5 seconds)
-    timeout: 10000,
+    timeout: 20000,
+    force: true,
   });
 };
 
-export const oneAvatarJoinsRoom = async () => {
-  const { browser, page } = await launchPage(playwright.chromium);
+const joinRoom = async ({
+  browser,
+  page,
+}: {
+  browser: Browser;
+  page: Page;
+}) => {
   try {
     enableLogs(page, 'page', true);
 
@@ -38,10 +46,13 @@ export const oneAvatarJoinsRoom = async () => {
       timeout: 40000,
       state: 'visible',
     });
+
     // create space in page
     await page.click(SELECTORS.CREATE_SPACE_BTN, {
       timeout: 40000,
-      delay: 400,
+      delay: 5000,
+      force: true,
+      button: 'left',
     });
 
     await page.waitForSelector(SELECTORS.INVITE_LINK_TEXT, {
@@ -55,10 +66,14 @@ export const oneAvatarJoinsRoom = async () => {
       state: 'visible',
       timeout: 10000,
     });
+
+    await sleep(4000);
+
     // enter space in page
     await page.click(SELECTORS.ENTER_SPACE_BTN, {
-      timeout: 10000,
-      delay: 400,
+      timeout: 15000,
+      force: true,
+      button: 'left',
     });
 
     if (shouldWaitForOnboardingpage) {
@@ -90,12 +105,22 @@ export const oneAvatarJoinsRoom = async () => {
       const localAvatarRig = document.querySelector('#local-avatar-rig');
       localAvatarRig!.setAttribute(
         'animation',
-        'property: position; from: 5 0 0; to: -5 0 0; dur: 1000; easing: easeInOutQuad; loop: true',
+        'property: position; from: 5 0 0; to: -5 0 0; dir: alternate; dur: 2000; easing: easeInOutQuad; loop: true',
       );
     });
+
+    await sleep(30000); // sleep for 30 seconds
   } catch (err) {
     console.error('Something went wrong while running the simulation 😢', err);
   } finally {
     await browser.close();
   }
+};
+
+export const oneAvatarJoinsRoom = async () => {
+  await Promise.all([
+    joinRoom(await launchPage(playwright.chromium)),
+    // joinRoom(await launchPage(playwright.webkit)),
+    // joinRoom(await launchPage(playwright.firefox)),
+  ]);
 };

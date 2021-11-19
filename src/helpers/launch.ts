@@ -3,16 +3,20 @@ import playwright, {
   BrowserType,
   Page,
   BrowserContext,
+  devices,
 } from 'playwright';
 import { BASE_ARGS, BASE_LAUNCH_OPTS, SITE_URL } from '../consts';
 
 interface Options {
   incognito?: boolean;
+  deviceName?: keyof typeof devices;
 }
 
 export const launchPage = async (
   browserType: BrowserType,
-  { incognito }: Options = {},
+  { incognito, deviceName }: Options = {
+    incognito: true,
+  },
 ): Promise<{
   browser: Browser;
   page: Page;
@@ -22,6 +26,8 @@ export const launchPage = async (
     ...BASE_ARGS,
     '--use-fake-ui-for-media-stream',
     '--use-fake-device-for-media-stream',
+    '--enable-mock-capture-devices=true',
+    '--enable-media-stream=true',
   ];
 
   if (incognito) {
@@ -32,9 +38,13 @@ export const launchPage = async (
     args,
   });
 
-  console.log('launch page :)', browserType);
+  console.log(`🚀 launching page using ${browserType.name()} browser...`);
 
-  const context = await browser.newContext();
+  const device = devices[deviceName!];
+
+  const context = await browser.newContext({
+    ...(device ?? {}),
+  });
   const page = await context.newPage();
   page.setDefaultNavigationTimeout(100000);
 
