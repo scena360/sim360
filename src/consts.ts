@@ -18,4 +18,5 @@ export const SELECTORS = {
   SUBMIT_NAME_BTN: 'button[name=displayname-submit]',
   ONBOARDING_MODAL_FOOTER_BTN: 'button[name=onboarding-modal-footer-btn]',
   INVITE_LINK_TEXT: 'span[data-testid="generated-invite-link-text"]',
+  SHARE_SCREEN_BUTTON: '[data-testid="Screen-Share"]',
 };
