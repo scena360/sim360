@@ -1,6 +1,6 @@
 import { LaunchOptions } from 'playwright';
 
-export const SITE_URL = 'https://scena-app--master-1c1b3b2-c72u6chy.web.app';
+export const SITE_URL = 'https://scena-app--master-639ff59-hnj3mkaw.web.app/';
 
 export const BASE_ARGS = ['--no-sandbox', '--ignore-certificate-errors'];
 

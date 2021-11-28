@@ -12,7 +12,8 @@
     "build:clean": "yarn run clean && tsc",
     "build:watch": "tsc -w",
     "start": "node build/index.js",
-    "build:run": "yarn run build && yarn start"
+    "build:run": "yarn run build && yarn start",
+    "clean": "rm -rf build tsconfig.tsbuildinfo || true"
   },
   "devDependencies": {
     "eslint": "^8.2.0",
