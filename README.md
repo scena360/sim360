@@ -1,5 +1,11 @@
 # Sim 360
 
+<img src="https://user-images.githubusercontent.com/32694765/189497503-f0b4f98a-d65d-4b93-be88-ac7335ff59da.png" alt="Sim 360 diagram" width="400"></img>
+
+Sim 360 is the evolution of Scena 360's testing framework – [coverage360](https://github.com/scena360/coverage-360). The main difference between the two projects is this one uses [Playwright](https://playwright.dev/) instead of Puppeteer w/ Jest.
+
+This repository serves as an example for configuring an E2E testing system for your application, particularly 3D ones that rely on technologies like [A-Frame](https://aframe.io/) and [Three.js](https://threejs.org/).
+
 ## Getting started
 
 ### Installing dependencies
@@ -57,3 +63,9 @@ export const yourSimulationName = async () => {
 ```
 
 5. Run `yarn build:run` to run your simulation.
+
+## TODOs
+
+- [ ] [Setup example with Playwright Test Runner](https://playwright.dev/docs/running-tests)
+- [ ] Document Docker set up and deployment to AWS instructions
+- [ ] Add documentation video and audio mocking
