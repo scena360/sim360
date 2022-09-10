@@ -6,7 +6,6 @@
   "author": "Scena 360 <info@scena360.com>",
   "license": "MIT",
   "private": true,
-  "dependencies": {},
   "scripts": {
     "build": "tsc",
     "build:clean": "yarn run clean && tsc",
@@ -16,6 +15,7 @@
     "clean": "rm -rf build tsconfig.tsbuildinfo || true"
   },
   "devDependencies": {
+    "@playwright/test": "^1.16.3",
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.2",

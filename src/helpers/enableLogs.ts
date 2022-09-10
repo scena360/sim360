@@ -85,11 +85,10 @@ const handleRequest = async (
         response: ${await responseToString(await request.response())}
         resource-type: ${request.resourceType()}
         headers: ${JSON.stringify(request.headers())}
-        failure: ${
-          failure != null
-            ? `FAIL REQUEST: ${failure.errorText}`
-            : '--no-failure--'
-        }
+        failure: ${failure != null
+        ? `FAIL REQUEST: ${failure.errorText}`
+        : '--no-failure--'
+      }
         method: ${request.method()}
       `,
     );

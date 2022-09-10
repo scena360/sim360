@@ -19,10 +19,10 @@ export const launchPage = async (
   },
 ): Promise<
   | {
-      browser: Browser;
-      page: Page;
-      context: BrowserContext;
-    }
+    browser: Browser;
+    page: Page;
+    context: BrowserContext;
+  }
   | undefined
 > => {
   let browser: Browser | null = null;
