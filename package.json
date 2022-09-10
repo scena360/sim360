@@ -6,10 +6,15 @@
   "author": "Scena 360 <info@scena360.com>",
   "license": "MIT",
   "private": true,
+  "dependencies": {
+    "playwright-aws-lambda": "^0.7.0",
+    "playwright-core": "^1.17.1"
+  },
   "scripts": {
     "build": "tsc",
     "build:clean": "yarn run clean && tsc",
     "build:watch": "tsc -w",
+    "start:docker": "npx playwright install && npm start",
     "start": "node build/index.js",
     "build:run": "yarn run build && yarn start",
     "clean": "rm -rf build tsconfig.tsbuildinfo || true"

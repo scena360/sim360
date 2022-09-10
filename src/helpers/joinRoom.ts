@@ -67,6 +67,15 @@ export const joinRoom = async ({
       timeout: 30000,
     });
 
+    const inviteLink = await page.evaluate(() => {
+      const link = document.querySelector(
+        'span[data-testid="generated-invite-link-text"]',
+      );
+      return (link as any).innerText;
+    });
+
+    console.log('invite link: ', inviteLink);
+
     const shouldWaitForOnboardingpage = await shouldWaitForOnboarding(page);
 
     await page.waitForSelector(SELECTORS.ENTER_SPACE_BTN, {

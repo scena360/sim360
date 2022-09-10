@@ -6,7 +6,7 @@ export const BASE_ARGS = ['--no-sandbox', '--ignore-certificate-errors'];
 
 export const BASE_LAUNCH_OPTS: LaunchOptions = {
   headless: false,
-  // executablePath: process.env.PLAYRIGHT_EXEC_PATH, // set by docker container
+  // executablePath: process.env.PLAYWRIGHT_BROWSERS_PATH, // set by docker container
 };
 
 export const SELECTORS = {
