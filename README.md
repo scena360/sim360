@@ -4,7 +4,7 @@
 
 Sim 360 is the evolution of Scena 360's testing framework – [coverage360](https://github.com/scena360/coverage-360). The main difference between the two projects is this one uses [Playwright](https://playwright.dev/) instead of Puppeteer w/ Jest.
 
-This repository serves as an example for configuring an E2E testing system for your application, particularly 3D ones that rely on technologies like [A-Frame](https://aframe.io/) and [Three.js](https://threejs.org/).
+This repository serves as an example for configuring an E2E testing system or simulation environment for your web application, particularly 3D ones that rely on technologies like [A-Frame](https://aframe.io/) and [Three.js](https://threejs.org/).
 
 ## Getting started
 
