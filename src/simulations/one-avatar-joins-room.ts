@@ -25,40 +25,37 @@ export const oneAvatarJoinsRoom = async () => {
           localAvatarRig!.setAttribute('position', '0 0 0');
         });
 
-        console.log('before loop');
-        var counter = 0;
-        while(counter < 300) {
-             var randTime = randomNumberBetween(1, 5);
-             counter = counter + randTime;
-             let randDirection : number = randomNumberBetween(1, 4);
-             var direction = '';
-            console.log('moving for ' + randTime + ' seconds');
-             switch(randDirection) {
-                case 1:
-                    console.log('going left');
-                    direction = 'ArrowLeft';
-                break;
+        let counter = 0;
+        while (counter < 300) {
+          let randTime = randomNumberBetween(1, 5);
+          counter = counter + randTime;
+          let randDirection: number = randomNumberBetween(1, 4);
+          let direction = '';
+          console.log('moving for ' + randTime + ' seconds');
+          switch (randDirection) {
+            case 1:
+              console.log('going left');
+              direction = 'ArrowLeft';
+              break;
 
-                case 2:
-                    console.log('going up');
-                    direction = 'ArrowUp';
-                break;
+            case 2:
+              console.log('going up');
+              direction = 'ArrowUp';
+              break;
 
-                case 3:
-                    console.log('going right');
-                    direction = 'ArrowRight';
-                break;
+            case 3:
+              console.log('going right');
+              direction = 'ArrowRight';
+              break;
 
-                case 4:
-                    console.log('going down');
-                    direction = 'ArrowDown';
-                break;
-             }
-            console.log('almost end loop');
-            await page.keyboard.down(direction);
-            await sleep(1000 * randTime);
-            await page.keyboard.up(direction);
-            console.log('end loop');
+            case 4:
+              console.log('going down');
+              direction = 'ArrowDown';
+              break;
+          }
+          await page.keyboard.down(direction);
+          await sleep(1000 * randTime);
+          await page.keyboard.up(direction);
         }
 
         await sleep(30000); // sleep for 30 seconds
